@@ -18,14 +18,12 @@ c. ¿Qué buenas prácticas implementaste en código real y por qué?
 
 Separamos la solución en una Web API y una biblioteca de clases para organizar las responsabilidades. Las entidades quedaron en Core y el DbContext en Infrastructure.
 
-Guardamos la cadena de conexión en appsettings.json y registramos TallerDbContext mediante inyección de dependencias en Program.cs. Así, la conexión queda centralizada y el controlador recibe el contexto que necesita.
+Guardamos la cadena de conexión en appsettings.json y registramos TallerDbContext mediante inyección de dependencias en Program.cs, de ese modo la conexión queda centralizada y el controlador recibe el contexto que necesita.
 
-En la base de datos usamos claves primarias autogeneradas, claves foráneas, una restricción de placa única y restricciones para evitar importes negativos. Esto ayuda a mantener la consistencia de los datos.
+En la base de datos usamos claves primarias autogeneradas, claves foráneas, esto ayuda a mantener la consistencia de los datos.
 
 El controlador generado utiliza operaciones asíncronas y devuelve respuestas HTTP según el resultado, como 201 al crear un registro, 204 al actualizarlo o eliminarlo y 404 cuando el registro consultado no existe.
 
 d. ¿Usaste herramientas de IA en esta práctica? ¿Qué herramientas usaste y en qué parte del proyecto?
 
-Sí, usamos ChatGPT como apoyo durante el desarrollo. Nos ayudó a interpretar las indicaciones, preparar el script de SQL Server, configurar la conexión y los comandos de scaffolding, y encontrar una alternativa cuando falló la generación del controlador.
-
-También lo usamos para revisar los cambios subidos al repositorio y redactar esta reflexión a partir de lo que hicimos. Los comandos se ejecutaron en nuestro equipo y el código generado se revisó dentro de Visual Studio.
+Sí, usamos Claude como apoyo para preparar el script de SQL Server y los comandos de scaffolding, y encontrar una alternativa cuando falló la generación del controlador, también lo usamos para revisar los cambios subidos al repositorio.
