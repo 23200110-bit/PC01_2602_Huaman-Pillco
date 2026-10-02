@@ -1,0 +1,6 @@
+@PC01_Huaman_Pillco_HostAddress = http://localhost:5248
+
+GET {{PC01_Huaman_Pillco_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
